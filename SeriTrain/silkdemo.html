@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SilkGrow - Sericulture Training</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8f2;
+            color: #bc8888;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            height: 70px;
+            background-color: #09ca16;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 60px;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+
+        .logo span {
+            color: #ffd54f;
+        }
+
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 600px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 60px 8%;
+
+            background:
+            linear-gradient(
+                rgba(105, 133, 109, 0.8),
+                rgba(5, 159, 149, 0.8)
+            ),
+            url("https://commons.wikimedia.org/wiki/Special:FilePath/Mulberry_leaves.jpg?width=1920")
+            center/cover;
+        }
+
+
+        .hero-content {
+            max-width: 600px;
+            color: rgb(208, 205, 110);
+        }
+
+
+        .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+
+        .hero-content h1 span {
+            color: #ffd54f;
+        }
+
+
+        .hero-content p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+
+        .hero-btn {
+            display: inline-block;
+
+            background-color: #ffd54f;
+            color: #333;
+
+            padding: 14px 28px;
+
+            text-decoration: none;
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           SECTION COMMON
+        ========================= */
+
+        .section {
+            padding: 70px 8%;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           TRAINING CARDS
+        ========================= */
+
+        .courses {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .course-card {
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .course-card:hover {
+            transform: translateY(-8px);
+        }
+
+
+        .course-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+
+        .course-card h3 {
+            color: #1b5e20;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+
+        .course-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           STEPS
+        ========================= */
+
+        .steps {
+            background-color: #e8f5e9;
+        }
+
+
+        .step-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .step {
+            background-color: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            border-top: 5px solid #2e7d32;
+        }
+
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+
+            background-color: #2e7d32;
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: auto;
+            margin-bottom: 15px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .step h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+
+        .step p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .service {
+            padding: 30px;
+
+            background-color: #1b5e20;
+            color: white;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+
+        .service:hover {
+            transform: scale(1.03);
+        }
+
+
+        .service h3 {
+            color: #ffd54f;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+
+        .service p {
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: flex;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        .about-text {
+            flex: 1;
+        }
+
+
+        .about-text h2 {
+            color: #1b5e20;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+
+        .about-text p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+
+        .about-box {
+            flex: 1;
+
+            background-color: #1b5e20;
+            color: white;
+
+            padding: 45px;
+
+            border-radius: 15px;
+
+            text-align: center;
+        }
+
+
+        .about-box h3 {
+            font-size: 30px;
+            color: #ffd54f;
+            margin-bottom: 15px;
+        }
+
+
+        .about-box p {
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background-color: #e8f5e9;
+        }
+
+
+        .contact-form {
+            max-width: 700px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+
+            padding: 14px;
+
+            margin-bottom: 15px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+        }
+
+
+        .contact-form textarea {
+            height: 130px;
+            resize: none;
+        }
+
+
+        .contact-form button {
+            width: 100%;
+
+            padding: 14px;
+
+            background-color: #1b5e20;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .contact-form button:hover {
+            background-color: #2e7d32;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #123d15;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        footer span {
+            color: #ffd54f;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .courses,
+            .services {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .step-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            .about {
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+
+            nav ul {
+                gap: 10px;
+            }
+
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+
+            .courses,
+            .services,
+            .step-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            Silk<span>Grow</span>
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#training">Training</a>
+            </li>
+
+            <li>
+                <a href="#process">Process</a>
+            </li>
+
+            <li>
+                <a href="#services">Services</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Learn the Art of
+                <span>Sericulture</span>
+            </h1>
+
+            <p>
+                Learn how to cultivate mulberry,
+                rear healthy silkworms and produce
+                high-quality silk cocoons through
+                practical training and expert guidance.
+            </p>
+
+            <a href="#training" class="hero-btn">
+                Start Training
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TRAINING
+    ========================== -->
+
+    <section class="section" id="training">
+
+        <div class="section-title">
+
+            <h2>
+                Our Training Programs
+            </h2>
+
+            <p>
+                Practical knowledge for successful silk production
+            </p>
+
+        </div>
+
+
+        <div class="courses">
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Mulberry Cultivation
+                </h3>
+
+                <p>
+                    Learn how to prepare land, select
+                    mulberry varieties, plant saplings
+                    and maintain healthy mulberry plants.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🐛
+                </div>
+
+                <h3>
+                    Silkworm Rearing
+                </h3>
+
+                <p>
+                    Understand silkworm growth stages,
+                    feeding practices, hygiene and
+                    proper rearing methods.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🧺
+                </div>
+
+                <h3>
+                    Cocoon Production
+                </h3>
+
+                <p>
+                    Learn how to provide suitable
+                    conditions for cocoon formation
+                    and harvest quality cocoons.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🌡️
+                </div>
+
+                <h3>
+                    Farm Management
+                </h3>
+
+                <p>
+                    Learn about temperature, humidity,
+                    ventilation, cleanliness and
+                    daily farm management.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Disease Management
+                </h3>
+
+                <p>
+                    Learn basic disease prevention,
+                    farm hygiene and methods to
+                    reduce risks in silkworm rearing.
+                </p>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Marketing & Business
+                </h3>
+
+                <p>
+                    Understand cocoon quality,
+                    production planning, market
+                    preparation and farm economics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section class="section steps" id="process">
+
+        <div class="section-title">
+
+            <h2>
+                Sericulture Process
+            </h2>
+
+            <p>
+                Follow the complete journey from plant to cocoon
+            </p>
+
+        </div>
+
+
+        <div class="step-container">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Grow Mulberry
+                </h3>
+
+                <p>
+                    Cultivate healthy mulberry plants
+                    as the primary food source for
+                    silkworms.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Rear Silkworms
+                </h3>
+
+                <p>
+                    Maintain clean rearing conditions
+                    and provide suitable mulberry leaves.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Cocoon Formation
+                </h3>
+
+                <p>
+                    Provide suitable mounting conditions
+                    for mature silkworms to spin cocoons.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Harvest Cocoons
+                </h3>
+
+                <p>
+                    Collect mature cocoons and prepare
+                    them for grading and further processing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="section" id="services">
+
+        <div class="section-title">
+
+            <h2>
+                Our Services
+            </h2>
+
+            <p>
+                Guidance beyond basic training
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <div class="service">
+
+                <h3>
+                    👨‍🌾 Farmer Training
+                </h3>
+
+                <p>
+                    Practical training sessions to
+                    help farmers understand modern
+                    sericulture practices.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>
+                    📋 Farm Assessment
+                </h3>
+
+                <p>
+                    Evaluate farm practices and
+                    identify areas where productivity
+                    and management can be improved.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>
+                    💡 Expert Consulting
+                </h3>
+
+                <p>
+                    Get guidance for farm planning,
+                    silkworm rearing and cocoon
+                    production.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section">
+
+        <div class="about">
+
+
+            <div class="about-text">
+
+                <h2>
+                    About SilkGrow
+                </h2>
+
+                <p>
+                    SilkGrow is a training platform designed
+                    to help farmers and beginners understand
+                    the complete process of sericulture.
+                </p>
+
+                <p>
+                    Our goal is to provide simple,
+                    practical and easy-to-understand
+                    training about mulberry cultivation,
+                    silkworm rearing and cocoon production.
+                </p>
+
+                <p>
+                    Farmers can learn the fundamentals,
+                    understand common risks and receive
+                    guidance to improve their farming practices.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>
+                    Learn. Grow. Produce.
+                </h3>
+
+                <p>
+                    Build your knowledge of sericulture
+                    and take your silk cocoon farming
+                    journey to the next level.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="section contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                Join Our Training
+            </h2>
+
+            <p>
+                Contact us to start your sericulture journey
+            </p>
+
+        </div>
+
+
+        <div class="contact-form">
+
+            <input
+                type="text"
+                placeholder="Enter your name"
+            >
+
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+            >
+
+
+            <input
+                type="tel"
+                placeholder="Enter your phone number"
+            >
+
+
+            <select>
+
+                <option>
+                    Select Training
+                </option>
+
+                <option>
+                    Mulberry Cultivation
+                </option>
+
+                <option>
+                    Silkworm Rearing
+                </option>
+
+                <option>
+                    Cocoon Production
+                </option>
+
+                <option>
+                    Farm Management
+                </option>
+
+                <option>
+                    Complete Sericulture Training
+                </option>
+
+            </select>
+
+
+            <textarea
+                placeholder="Tell us about your requirement">
+            </textarea>
+
+
+            <button>
+                Submit Training Request
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <span>SilkGrow</span>
+            | Sericulture Training & Consulting
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
